@@ -2,7 +2,6 @@
 
 A simple calculator with graphical interface.
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+See demo on CodePen: <a href="https://codepen.io/miffycs/full/vQQePK">https://codepen.io/miffycs/full/vQQePK</a>
 
-
-See demo here: https://codepen.io/miffycs/full/vQQePK
+<img src="https://github.com/miffycs/JS-Calculator/blob/master/screenshot.jpg" alt="screenshot">
