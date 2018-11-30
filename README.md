@@ -1,9 +1,11 @@
-# JS-Calculator
+# Web-based Calculator (v1.0 & v2.0)
 
-A simple calculator with graphical interface.
+Web-based calculators with graphical interface.
 
-See demo on CodePen: <a href="https://codepen.io/miffycs/full/vQQePK">https://codepen.io/miffycs/full/vQQePK</a>
+<a href="https://codepen.io/miffycs/full/vQQePK">Simple Calculator</a>
 
-<img src="https://github.com/miffycs/JS-Calculator/blob/master/screenshot.jpg" alt="screenshot" width=388 height=415>
+<img src="https://github.com/miffycs/JS-Calculator/blob/master/js-calculator/img/screenshot.jpg" alt="screenshot" width=388 height=415>
 
-<img src="https://github.com/miffycs/JS-Calculator/blob/master/screenshot.jpg" alt="screenshot" width=287 height=426.5>
+<a href="https://codepen.io/miffycs/full/vQQePK">Apple-style Calculator</a>, done with React
+
+<img src="https://github.com/miffycs/JS-Calculator/blob/master/react-calculator/img/screenshot.jpg" alt="screenshot" width=287 height=426.5>
