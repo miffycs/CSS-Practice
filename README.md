@@ -1,1 +1,3 @@
-# CSS Practice
+# 100 Days of Web (CSS/JavaScript) Practice
+
+README to be updated...
