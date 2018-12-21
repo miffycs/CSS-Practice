@@ -1,23 +1,29 @@
 # 100 Days of Web (CSS/JavaScript) Practice
 
-README to be updated... (*will officially start on 2019/01/01!!*)
+
 
 ---
 
-# Web-based Calculators (v1.0 & v2.0)
-
-*Web-based calculators with graphical interface. Two versions. Demos hosted on CodePen.*  
-*Coded in:* `HTML`, `CSS`, `JavaScript` (`Babel` & `React`)
-
----
-
-**v1.0 - <a href="https://codepen.io/miffycs/full/vQQePK">Simple Calculator</a>**  
-
-<a href="https://codepen.io/miffycs/full/vQQePK"><img src="https://github.com/miffycs/Web-Practice/blob/master/calculators/js-calculator/img/screenshot.jpg" alt="screenshot" width="388" height="415" /></a>
-
----
-
-**v2.0 - <a href="https://codepen.io/miffycs/full/NEerJE/">iOS Calculator</a>**  
-<a href="https://codepen.io/miffycs/full/NEerJE/"><img src="https://github.com/miffycs/Web-Practice/blob/master/calculators/react-calculator/img/screenshot.jpg" alt="screenshot" width="287" height="426.5" /></a>
+| #     | GitHub Repo  | Date  |
+| :---: | :---  | :---  |
+| 001 | [Gradient Background](https://github.com/miffycs/Web-Practice/tree/master/gradient-background) | 2018/11/27 |
+| 002 | [iOS Calculators](https://github.com/miffycs/Web-Practice/tree/master/calculators) | 2018/11/29 |
+| 003 | [Social Login Buttons](https://github.com/miffycs/Web-Practice/tree/master/social-login-buttons) | 2018/12/11 |
+| 004 | [Starry Space Cowboy](https://github.com/miffycs/Web-Practice/tree/master/starry-about-space-cowboy) | 2018/12/17 |
+| 005 | [Old Steam Clock](https://github.com/miffycs/Web-Practice/tree/master/old-clock) | 2018/12/25 |
+| 006 | []() | 2018/12/ |
+| 007 | []() | 2018/12/ |
+| 008 | []() | 2018/12/ |
+| 009 | []() | 2018/12/ |
+| 010 | []() | 2018/12/ |
+| 011 | []() | 2019/01/ |
+| 012 | []() | 2019/01/ |
+| 013 | []() | 2019/01/ |
+| 014 | []() | 2019/01/ |
+| 015 | []() | 2019/01/ |
+| 016 | []() | 2019/01/ |
+| 017 | []() | 2019/01/ |
+| 018 | []() | 2019/01/ |
+| 019 | []() | 2019/01/ |
 
 ---
