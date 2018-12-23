@@ -1,0 +1,134 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: verdana;
+    background-color: #eeeeee;
+    padding: 50px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+/* ========================= */
+/* rules for navigation menu */
+/* ========================= */
+ul#navmenu {
+    width: 645px;
+    margin: 0px auto;
+}
+
+ul#navmenu, ul.sub1, ul.sub2 {
+    list-style-type: none;
+    /* outline: 1px solid red; */
+    font-size: 10pt;
+}
+
+/* border on list contents to see better */
+ul#navmenu li {
+    /* outline: 1px solid red; */
+    /* border: 1px solid red; */
+    width: 125px;
+    text-align: center;
+    position: relative;
+    float: left;
+    /* change list from vertical to horizontal*/
+    margin-right: 4px;
+}
+
+/* make links behave as a button block instead of just text-area */
+ul#navmenu a {
+    text-decoration: none;
+    /* gets rid of the underline */
+    display: block;
+    width: 125px;
+    height: 25px;
+    line-height: 25px;
+    /* vertical-"center" the links to button area */
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+ul#navmenu .sub1 li {
+    /* border: 1px solid green; */
+    /* margin-top: 5px; */
+}
+
+ul#navmenu .sub1 a {
+    margin-top: 5px;
+}
+
+ul#navmenu .sub2 a {
+    margin-left: 3px;
+}
+
+/* Parent + Child Selector:
+    whenever I hover over a list item,
+    I want the anchor tag that is the direct child of that list item
+    to change to a different color */
+ul#navmenu li:hover>a {
+    background-color: #add8e6;
+}
+
+/* Child-only Selector:
+    only change the color of the child list item and not the parent item
+*/
+ul#navmenu li:hover a:hover {
+    background-color: #deeff5;
+}
+
+ul#navmenu ul.sub1 {
+    /* display: block; */
+    /*  ^ show block of clickable-button / don't show v */
+    display: none;
+    position: absolute;
+    top: 26px;
+    left: 0px;
+}
+
+ul#navmenu ul.sub2 {
+    /* display: block; */
+    /*  ^ show block of clickable-button / don't show v */
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 126px;
+}
+
+/* if I'm hovering over a list item (li:hover),
+then change display rules for sub1 (.sub1) */
+ul#navmenu li:hover .sub1 {
+    display: block;
+}
+
+/* if I'm hovering over a list item (li:hover),
+that is within my sub1 (.sub1),
+then change display rules for sub2 (.sub2) */
+ul#navmenu .sub1 li:hover .sub2 {
+    display: block;
+}
+
+.darrow {
+    font-size: 8pt;
+    position: absolute;
+    top: 5px;
+    right: 4px;
+}
+
+.rarrow {
+    font-size: 8pt;
+    position: absolute;
+    top: 10px;
+    right: 4px;
+}
