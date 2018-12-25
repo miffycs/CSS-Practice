@@ -88,7 +88,7 @@ body {
     float: none;
 }
 
-.navigation li:hover>ul {
+.navigation li:hover > ul {
     display: block;
     background: #222;
     border: solid 3px #fff;
@@ -99,7 +99,7 @@ body {
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
-.navigation li:hover>ul li:hover {
+.navigation li:hover > ul li:hover {
     -webkit-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
     content: '\e62d';
