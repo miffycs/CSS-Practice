@@ -159,16 +159,17 @@
         "string" == typeof t && "function" == typeof n || console.error("Must initialize with valid selector string and onEnter callback"), u = Array.prototype.slice.call(document.querySelectorAll(t)), v(), d();
     }
 
-    e("site-footer", function() {
-        var e = document.querySelector(".site-footer__spacer"),
-            t = document.querySelector(".site-footer");
-
-        function n() {
-            var n = t.offsetHeight;
-            e.style.height = n + "px";
-        }
-        window.addEventListener("load", n), window.addEventListener("resize", H(n, 200));
-    }), document.addEventListener("DOMContentLoaded", function() {
+    // e("site-footer", function() {
+        // var e = document.querySelector(".site-footer__spacer"),
+        //     t = document.querySelector(".site-footer");
+        //
+        // function n() {
+        //     var n = t.offsetHeight;
+        //     e.style.height = n + "px";
+        // }
+        // window.addEventListener("load", n), window.addEventListener("resize", H(n, 200));
+    // }),
+    document.addEventListener("DOMContentLoaded", function() {
         Xe({
             selector: "[data-scroll-animate]",
             onEnter: function(e) {

@@ -1,11 +1,18 @@
 body {
-    background: #666;
     /* padding: [top][right][bottom][left] || [top][right&left][bottom] || [top&bottom][right&left] */
-    padding: 20px;
+    margin: 20px;
     text-align: center;
     font-size: 20px;
     font-weight: 300;
+    /* width: 890px needed */
 }
+
+.container {
+    position: relative;
+    margin: 10% 10% 10% 10%;
+}
+
+/* ------------------ question ------------------ */
 
 .question {
     font-size: 40px;
@@ -13,12 +20,21 @@ body {
     color: red;
 }
 
+
+/* --------------- space-cowboy --------------- */
 /* -------------------------------------------- */
 /*  If viewed on mobile, (screen-width < 600px) */
 /*  only show static pic and no laser animation */
 /* -------------------------------------------- */
 
-/* ------------------ Mobile ------------------ */
+.space-cowboy {
+    transform: scale(0.75);
+    position: relative;
+    min-height: 250px;
+    user-select: none;
+}
+
+/* ---------- space-cowboy: mobile ------------ */
 
 @media (max-width: 600px) {
     .space-cowboy {
@@ -39,19 +55,12 @@ body {
     margin-right: auto;
 }
 
-/* ---------------- Non-Mobile ---------------- */
+/* --------- space-cowboy: non-mobile --------- */
 
 @media (min-width: 601px) {
     .space-cowboy__mobile {
         display: none;
     }
-}
-
-.space-cowboy {
-    transform: scale(0.75);
-    position: relative;
-    min-height: 250px;
-    user-select: none;
 }
 
 /* body */
@@ -82,7 +91,6 @@ body {
 
 /* laser effect */
 .space-cowboy__laser {
-    z-index: -1;
     pointer-events: none;
     position: absolute;
     top: calc(50% - 20px);
@@ -120,39 +128,40 @@ body {
     }
 }
 
-/* answers */
+
+/* ------------------ answers ------------------ */
 
 .answers {
+    position: relative;
+    margin-top: 40px;
     text-align: center;
+    pointer-events: none;
 }
 
 .answers .option {
-    background-color: yellow;
     position: relative;
+    background-color: lightyellow;
+    padding: 0 10px;
+    border: 2px solid gray;
     display: inline-block;
+    pointer-events:auto;
 }
 
-.answers .option-spacing {
-    /* top&bottom right&left */
-    padding: 0px 80px;
+.answers .spacing {
+    margin: 0 200px;
     display: inline-block;
 }
 
 /* hide option images */
-.answers .option .option__image {
+.answers .option__image {
+    /* limit area to only the area of the option's text */
+    position: absolute;
     /* set to opaque (can't see), default = non-opaque = 1 */
     opacity: 0;
-    /* limit image to only the area of the option's text */
-    position: absolute;
-    /* set element position, from its parent element */
-    bottom: 0;
-    left: 0;
     /* set image size */
-    max-width: 600px;
+    max-width: 300px;
     /* set cannot be targetted by mouse pointer */
     pointer-events: none;
-    /* arrange object order by x/y stack index (-=behind, auto/initial, += infront) */
-    z-index: -1;
     /* transition: [property-name] [duration] [timing-fuction] [transition-delay] */
     transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
 }
@@ -161,19 +170,19 @@ body {
 @media (min-width: 601px) {
     .option:hover {
         cursor: pointer;
+        background-color: gray;
     }
     .option:hover .option__image {
         opacity: 1;
-    }
-    .option:hover .transform_left {
         position: absolute;
-        left: 0%;
+        /* arrange object order by x/y stack index (-=behind, auto/initial, += infront) */
+        z-index: -1;
+        /* image center aligns with option-text center*/
+        /* top: 50%; left: 50%; transform: translate(-50%, -50%); */
+        /* option + : x:center, y:top */
+        left: 50%;
         top: 0%;
-        /* transform: translate(-100%, -50%); */
-        /* transform: translate(-650px,-50px); */
-    }
-    .option:hover .transform_right {
-        position: absolute;
-        transform: translate(150px,-50px);
+        /* image + : x:center, y:floatOnTop */
+        transform: translate(-50%, -110%);
     }
 }
