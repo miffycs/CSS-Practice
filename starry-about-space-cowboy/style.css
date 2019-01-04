@@ -1,96 +1,87 @@
-.hover-reveal {
-    background-color: #f9e345;
-    position: relative
+body {
+    background: #666;
+    /* padding: [top][right][bottom][left] || [top][right&left][bottom] || [top&bottom][right&left] */
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
 }
 
-@media (min-width: 601px) {
-    .hover-reveal:hover {
-        cursor: pointer
+.question {
+    font-size: 40px;
+    font-weight: 600;
+    color: red;
+}
+
+/* -------------------------------------------- */
+/*  If viewed on mobile, (screen-width < 600px) */
+/*  only show static pic and no laser animation */
+/* -------------------------------------------- */
+
+/* ------------------ Mobile ------------------ */
+
+@media (max-width: 600px) {
+    .space-cowboy {
+        display: none;
     }
-
-    .hover-reveal:hover .hover-reveal__image {
-        opacity: 1;
-        transform: translateY(-20px);
-        z-index: 1
-    }
 }
 
-.hover-reveal__image {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
-    opacity: 0;
-    max-width: none;
-    pointer-events: none
-}
-
-.about-us {
-    font-size: 17px;
-    font-weight: 300
-}
-
-.about-us .body-content {
-    box-shadow: none
-}
-
-
-.about-us .space-cowboy {
+.space-cowboy__mobile {
     transform: scale(0.75);
     position: relative;
     min-height: 250px;
-    user-select: none
 }
 
-@media (max-width: 600px) {
-    .about-us .space-cowboy {
-        display: none
-    }
-}
-
-.about-us .space-cowboy--mobile {
-    transform: scale(0.75);
-    position: relative;
-    min-height: 250px
-}
-
-@media (min-width: 601px) {
-    .about-us .space-cowboy--mobile {
-        display: none
-    }
-}
-
-.about-us .space-cowboy--mobile img {
+.space-cowboy__mobile img {
     max-width: 175px;
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
 }
 
-.about-us .space-cowboy__arm-container {
-    max-width: 250px;
-    position: absolute;
-    top: calc(50% - 20px);
-    left: calc(50% + 25px);
-    transform: translate(-50%, -50%)
+/* ---------------- Non-Mobile ---------------- */
+
+@media (min-width: 601px) {
+    .space-cowboy__mobile {
+        display: none;
+    }
 }
 
-.about-us .space-cowboy__arm {
-    width: 100%;
-    max-width: 100%;
-    transform-origin: 50% 50%;
-    transform: rotate(150deg)
+.space-cowboy {
+    transform: scale(0.75);
+    position: relative;
+    min-height: 250px;
+    user-select: none;
 }
 
-.about-us .space-cowboy__body {
+/* body */
+.space-cowboy__body {
     max-width: 100px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 
-.about-us .space-cowboy__laser {
+/* arm container */
+.space-cowboy__arm-container {
+    max-width: 250px;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% + 25px);
+    transform: translate(-50%, -50%);
+}
+
+/* arm */
+.space-cowboy__arm {
+    width: 100%;
+    max-width: 100%;
+    transform-origin: 50% 50%;
+    transform: rotate(150deg);
+}
+
+/* laser effect */
+.space-cowboy__laser {
     z-index: -1;
     pointer-events: none;
     position: absolute;
@@ -104,212 +95,85 @@
     transform-origin: bottom left;
     opacity: 0;
     transition: opacity 150ms ease-in-out;
-    animation-play-state: paused
+    animation-play-state: paused;
 }
 
-.about-us .space-cowboy__laser:after {
+/* shoot laser from gun instead of from arm */
+/* make a white cover up from tip of arm to gun */
+.space-cowboy__laser:after {
     content: '';
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #fff 127px, rgba(255, 255, 255, 0) 132px)
+    background: linear-gradient(to right, #fff 127px, rgba(255, 255, 255, 0) 132px);
 }
 
+/* laser wave effect */
 @keyframes laser {
     0% {
-        background-position: 0 0
+        background-position: 0 0;
     }
 
     100% {
-        background-position: 2000px 0
+        background-position: 2000px 0;
     }
 }
 
-.about-us .our-team {
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0
-}
+/* answers */
 
-.about-us .our-team .inner {
-    padding-left: 16px;
-    padding-right: 16px
-}
-
-.about-us .our-team .expand-more {
-    user-select: none;
-    display: block;
-    margin: 3rem auto 2rem;
+.answers {
     text-align: center;
-    text-transform: uppercase;
-    color: #323248;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    transition: margin 400ms ease-in-out;
-    cursor: pointer
 }
 
-.about-us .our-team .expand-more:after {
-    content: '\002B';
+.answers .option {
+    background-color: yellow;
+    position: relative;
     display: inline-block;
-    margin-left: 4px;
-    position: relative;
-    top: -1px
 }
 
-.about-us .our-team .expand-more.is-open {
-    margin-bottom: 6px
+.answers .option-spacing {
+    /* top&bottom right&left */
+    padding: 0px 80px;
+    display: inline-block;
 }
 
-.about-us .our-team .expand-more.is-open:after {
-    content: '\2212';
-    font-weight: 900
-}
-
-.about-us .our-team .name-hover {
-    position: relative;
-    transition: color 250ms ease-in-out;
-    z-index: 1
-}
-
-.about-us .our-team .name-hover.virginia .name-hover__image {
-    top: calc(50% - 15px);
-    transform: translateY(calc(-50% - 10px))
-}
-
-.about-us .our-team .name-hover.virginia:hover .name-hover__image {
-    transform: translateY(calc(-50% - 25px))
-}
-
-@media (min-width: 601px) {
-    .about-us .our-team .name-hover:hover {
-        cursor: default;
-        color: #FC766A
-    }
-
-    .about-us .our-team .name-hover:hover .name-hover__image {
-        opacity: 1;
-        transform: translateY(calc(-50% - 15px));
-        z-index: -1
-    }
-}
-
-.about-us .our-team .name-hover__image {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -20px;
-    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+/* hide option images */
+.answers .option .option__image {
+    /* set to opaque (can't see), default = non-opaque = 1 */
     opacity: 0;
-    max-width: 125px;
-    pointer-events: none;
-    z-index: -1
-}
-
-.about-us .team-list__container {
-    background-image: url("https://dyajmw2sca9cs.cloudfront.net/img/v3/about/accordion-bg.png");
-    background-size: 880px;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-color: #FDE3D8;
-    padding: calc(3rem + 25px) 32px 3rem;
-    width: 100%;
-    margin: 0 auto
-}
-
-.about-us .team-list {
-    max-width: 550px;
-    margin: 0 auto;
-    font-size: 20px
-}
-
-.about-us .team-list li {
-    margin-bottom: 0.75rem
-}
-
-@media (min-width: 601px) {
-    .about-us .wrap-up-cards {
-        display: flex;
-        justify-content: space-between
-    }
-}
-
-.about-us .wrap-up-card {
-    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.25);
-    margin-bottom: 2rem;
-    position: relative;
-    display: flex;
-    flex-direction: column
-}
-
-.about-us .wrap-up-card img {
-    display: block
-}
-
-.about-us .wrap-up-card>a {
-    flex: none;
-    cursor: pointer
-}
-
-.about-us .wrap-up-card:hover:before {
-    box-shadow: inset 0 0 0 12px
-}
-
-.about-us .wrap-up-card:hover .wrap-up-card__text-block p:after {
-    right: -9px
-}
-
-.about-us .wrap-up-card:before {
-    content: '';
-    display: block;
+    /* limit image to only the area of the option's text */
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    /* set element position, from its parent element */
     bottom: 0;
+    left: 0;
+    /* set image size */
+    max-width: 600px;
+    /* set cannot be targetted by mouse pointer */
     pointer-events: none;
-    transition: box-shadow 175ms ease-in-out;
-    box-shadow: inset 0 0 0 0px
+    /* arrange object order by x/y stack index (-=behind, auto/initial, += infront) */
+    z-index: -1;
+    /* transition: [property-name] [duration] [timing-fuction] [transition-delay] */
+    transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
 }
 
-.about-us .wrap-up-card.green:before {
-    color: #74e4d5
-}
-
-.about-us .wrap-up-card.blush:before {
-    color: #FC766A
-}
-
+/* show answers-image if non-mobile */
 @media (min-width: 601px) {
-    .about-us .wrap-up-card {
-        width: 48%;
-        margin-bottom: 0
+    .option:hover {
+        cursor: pointer;
     }
-}
-
-.about-us .wrap-up-card__text-block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 6rem;
-    padding: 1rem 2rem;
-    font-weight: 400;
-    line-height: 1.4
-}
-
-.about-us .wrap-up-card__text-block p {
-    color: #3C3C57;
-    padding-right: 6px
-}
-
-.about-us .wrap-up-card__text-block p:after {
-    display: inline-block;
-    content: '→';
-    position: relative;
-    top: 0;
-    right: -5px;
-    transition: right 150ms ease-in-out;
-    font-weight: 300
+    .option:hover .option__image {
+        opacity: 1;
+    }
+    .option:hover .transform_left {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        /* transform: translate(-100%, -50%); */
+        /* transform: translate(-650px,-50px); */
+    }
+    .option:hover .transform_right {
+        position: absolute;
+        transform: translate(150px,-50px);
+    }
 }
